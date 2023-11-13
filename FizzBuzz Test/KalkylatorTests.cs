@@ -10,14 +10,16 @@ namespace FizzBuzz_Test
         public void När_FizzBuzzKalkyl_EjImplementerad_Then_ShouldThrow_NotImplementedException()
         {
             // Arrange
-            int randomNummer = 3;
+            int randomNummer = 1;
 
             // Act
             string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
 
             // Assert
-            Assert.AreEqual("fizz", result);
-            Assert.AreEqual("buzz", result);
+            //Assert.AreEqual("Fizz", result);
+            //Assert.AreEqual("Buzz", result);
+            Assert.AreEqual("FizzBuzz", result);
+            
 
             // Testet kommer att bli grönt då ett NotImplementedException kastas
         }
