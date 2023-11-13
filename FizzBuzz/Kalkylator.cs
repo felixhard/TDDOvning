@@ -23,27 +23,27 @@ namespace FizzBuzz
                 return nummer.ToString();
             }
         }
-        public static void LogMessage(string message)
+        public static void Konsollogg(string message)
         {
-            Console.WriteLine($"Service: {message}");
+            Console.WriteLine(message);
         }
         public static void FizzBuzzKalkylKonsol(int nummer)
         {
             if (nummer % 3 == 0 && nummer % 5 == 0)
             {
-                LogMessage("FizzBuzz");
+                Konsollogg("FizzBuzz");
             }
             else if (nummer % 3 == 0)
             {
-                LogMessage("Fizz");
+                Konsollogg("Fizz");
             }
             else if (nummer % 5 == 0)
             {
-                LogMessage("Buzz");
+                Konsollogg("Buzz");
             }
             else
             {
-                LogMessage(nummer.ToString());
+                Konsollogg(nummer.ToString());
             }
         }
     }
