@@ -2,9 +2,16 @@
 {
     public class Kalkylator
     {
-        public static void FizzBuzzKalkyl(int nummer)
+        public static string FizzBuzzKalkyl(int nummer)
         {
-            throw new NotImplementedException();
+            if (nummer % 3 == 0)
+            {
+                return "fizz";
+            }
+            else
+            {
+                return nummer.ToString();
+            }
         }
     }
 }
