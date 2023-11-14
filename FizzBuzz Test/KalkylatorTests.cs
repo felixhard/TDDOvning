@@ -1,5 +1,8 @@
 using FizzBuzz;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
+using System;
 using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FizzBuzz_Test
 {
@@ -33,15 +36,39 @@ namespace FizzBuzz_Test
             //Arrange
             StringWriter stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
-            var expected = expectedResult;
 
             //Act
             Kalkylator.FizzBuzzKalkylKonsol(randomNummer);
             var actual = stringWriter.ToString().Trim();
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedResult, actual);
 
         }
-    }           
+
+        [TestMethod]
+        [DataRow(1, "1")]
+        [DataRow(2, "2")]
+        [DataRow(3, "Fizz")]
+        [DataRow(4, "4")]
+        [DataRow(5, "Buzz")]
+        [DataRow(6, "Fizz")]
+        [DataRow(10, "Buzz")]
+        [DataRow(11, "11")]
+        [DataRow(15, "FizzBuzz")]
+        public void FizzBuzzKalkylInput_Ska_Skriva_Nummer(int inputNummer, string expectedOutput)
+        {
+            using (var stringWriter = new StringWriter())
+            {
+                Console.SetOut(stringWriter);
+
+                // Act
+                Kalkylator.FizzBuzzInput(inputNummer.ToString());
+                var actualOutput = stringWriter.ToString().Trim();
+
+                // Assert
+                Assert.AreEqual(expectedOutput, actualOutput);
+            }
+        }
+    }
 }

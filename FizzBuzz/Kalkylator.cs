@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel.Design;
+using System.Text.RegularExpressions;
 
 namespace FizzBuzz
 {
@@ -44,6 +45,17 @@ namespace FizzBuzz
             else
             {
                 Konsollogg(nummer.ToString());
+            }
+        }
+        public static void FizzBuzzInput(string inputNummer)
+        {
+            if (int.TryParse(inputNummer, out int nummer))
+                {
+                FizzBuzzKalkylKonsol(nummer);
+            }
+            else
+            {
+                throw new ArgumentException($"{inputNummer} är inte ett nummer");
             }
         }
     }
