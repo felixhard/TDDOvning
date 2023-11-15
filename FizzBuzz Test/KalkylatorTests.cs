@@ -64,17 +64,16 @@ namespace FizzBuzz_Test
         [DataRow(15, "FizzBuzz")]
         public void FizzBuzzKalkylInput_Ska_Skriva_Nummer(int inputNummer, string expectedOutput)
         {
-            using (var stringWriter = new StringWriter())
-            {
-                Console.SetOut(stringWriter);
+            // Arrange
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
 
-                // Act
-                Kalkylator.FizzBuzzInput(inputNummer.ToString());
-                var actualOutput = stringWriter.ToString().Trim();
+            // Act
+            Kalkylator.FizzBuzzInput(inputNummer.ToString());
+            var actualOutput = stringWriter.ToString().Trim();
 
-                // Assert
-                Assert.AreEqual(expectedOutput, actualOutput);
-            }
+            // Assert
+            Assert.AreEqual(expectedOutput, actualOutput);
         }
     }
 }
