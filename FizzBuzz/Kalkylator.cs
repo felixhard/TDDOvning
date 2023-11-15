@@ -24,13 +24,9 @@ namespace FizzBuzz
                 return nummer.ToString();
             }
         }
-        public static void Konsollogg(string message)
-        {
-            Console.WriteLine(message);
-        }
         public static void FizzBuzzKalkylKonsol(int nummer)
         {
-                Konsollogg(FizzBuzzKalkyl(nummer));
+                Console.WriteLine(FizzBuzzKalkyl(nummer));
         }
         public static void FizzBuzzInput(string inputNummer)
         {
