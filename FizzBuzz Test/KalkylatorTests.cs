@@ -25,19 +25,25 @@ namespace FizzBuzz_Test
             Assert.AreEqual(actualResult, expectedResult);
         }
 
-        [DataRow(15, "FizzBuzz")]
-        [DataRow(3, "Fizz")]
-        [DataRow(5, "Buzz")]
-        [DataRow(1, "1")]
         [TestMethod]
+        [DataRow(1, "1")]
+        [DataRow(2, "2")]
+        [DataRow(3, "Fizz")]
+        [DataRow(4, "4")]
+        [DataRow(5, "Buzz")]
+        [DataRow(6, "Fizz")]
+        [DataRow(10, "Buzz")]
+        [DataRow(11, "11")]
+        [DataRow(15, "FizzBuzz")]
         public void FizzBuzzKalkylKonsol_Kollar_Att_Resultat_Skrivs_Ut_I_Konsol(int randomNummer, string expectedResult)
         {
 
             //Arrange
-            StringWriter stringWriter = new StringWriter();
-            Console.SetOut(stringWriter);
+            
 
             //Act
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
             Kalkylator.FizzBuzzKalkylKonsol(randomNummer);
             var actual = stringWriter.ToString().Trim();
 
