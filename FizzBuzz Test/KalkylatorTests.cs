@@ -39,12 +39,13 @@ namespace FizzBuzz_Test
         {
 
             //Arrange
-            
 
             //Act
             StringWriter stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
+
             Kalkylator.FizzBuzzKalkylKonsol(randomNummer);
+
             var actual = stringWriter.ToString().Trim();
 
             // Assert
@@ -65,11 +66,13 @@ namespace FizzBuzz_Test
         public void FizzBuzzKalkylInput_Ska_Skriva_Nummer(int inputNummer, string expectedOutput)
         {
             // Arrange
+
+            // Act
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
 
-            // Act
             Kalkylator.FizzBuzzInput(inputNummer.ToString());
+
             var actualOutput = stringWriter.ToString().Trim();
 
             // Assert
