@@ -8,21 +8,16 @@ namespace FizzBuzz
         //KRAV 1
         public static string FizzBuzzKalkyl(int nummer)
         {
-            if (nummer % 3 == 0 && nummer % 5 == 0)
+            switch (nummer)
             {
-                return "FizzBuzz";
-            }
-            else if (nummer % 3 == 0)
-            {
-                return "Fizz";
-            }
-            else if (nummer % 5 == 0)
-            {
-                return "Buzz";
-            }
-            else
-            {
-                return nummer.ToString();
+                case var n when n % 3 == 0 && n % 5 == 0:
+                    return "FizzBuzz";
+                case var n when n % 3 == 0:
+                    return "Fizz";
+                case var n when n % 5 == 0:
+                    return "Buzz";
+                default:
+                    return nummer.ToString();
             }
         }
 
