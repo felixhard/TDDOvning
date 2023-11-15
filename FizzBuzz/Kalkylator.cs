@@ -5,6 +5,7 @@ namespace FizzBuzz
 {
     public class Kalkylator
     {
+        //KRAV 1
         public static string FizzBuzzKalkyl(int nummer)
         {
             if (nummer % 3 == 0 && nummer % 5 == 0)
@@ -25,11 +26,13 @@ namespace FizzBuzz
             }
         }
 
+        //KRAV 2
         public static void FizzBuzzKalkylKonsol(int nummer)
         {
             Console.WriteLine(FizzBuzzKalkyl(nummer));
         }
 
+        //KRAV 3
         public static void FizzBuzzInput(string inputNummer)
         {
             if (int.TryParse(inputNummer, out int nummer))
